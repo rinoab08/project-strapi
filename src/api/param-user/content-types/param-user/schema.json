@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "param_users",
+  "info": {
+    "singularName": "param-user",
+    "pluralName": "param-users",
+    "displayName": "Paramlogin",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Username": {
+      "type": "string"
+    },
+    "Password": {
+      "type": "string"
+    }
+  }
+}

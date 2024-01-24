@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "param_applications",
+  "info": {
+    "singularName": "param-application",
+    "pluralName": "param-applications",
+    "displayName": "ParamApplication"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "CutOffStart": {
+      "type": "integer"
+    },
+    "CutOffEnd": {
+      "type": "integer"
+    }
+  }
+}
