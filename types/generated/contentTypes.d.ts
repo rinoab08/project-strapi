@@ -362,102 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiGroupMenuGroupMenu extends Schema.CollectionType {
-  collectionName: 'group_menus';
-  info: {
-    singularName: 'group-menu';
-    pluralName: 'group-menus';
-    displayName: 'GroupMenu';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Description: Attribute.String;
-    Icon: Attribute.String;
-    OrderNumber: Attribute.Integer;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::group-menu.group-menu',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::group-menu.group-menu',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiParamApplicationParamApplication
-  extends Schema.CollectionType {
-  collectionName: 'param_applications';
-  info: {
-    singularName: 'param-application';
-    pluralName: 'param-applications';
-    displayName: 'ParamApplication';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    CutOffStart: Attribute.Integer;
-    CutOffEnd: Attribute.Integer;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::param-application.param-application',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::param-application.param-application',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiParamUserParamUser extends Schema.CollectionType {
-  collectionName: 'param_users';
-  info: {
-    singularName: 'param-user';
-    pluralName: 'param-users';
-    displayName: 'Paramlogin';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Username: Attribute.String;
-    Password: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::param-user.param-user',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::param-user.param-user',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -864,6 +768,155 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiGroupMenuGroupMenu extends Schema.CollectionType {
+  collectionName: 'group_menus';
+  info: {
+    singularName: 'group-menu';
+    pluralName: 'group-menus';
+    displayName: 'GroupMenu';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Description: Attribute.String;
+    Icon: Attribute.String;
+    OrderNumber: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::group-menu.group-menu',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::group-menu.group-menu',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMenuMenu extends Schema.CollectionType {
+  collectionName: 'menus';
+  info: {
+    singularName: 'menu';
+    pluralName: 'menus';
+    displayName: 'Menu';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Description: Attribute.String;
+    GroupMenu: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::menu.menu', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::menu.menu', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiParamApplicationParamApplication
+  extends Schema.CollectionType {
+  collectionName: 'param_applications';
+  info: {
+    singularName: 'param-application';
+    pluralName: 'param-applications';
+    displayName: 'ParamApplication';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    CutOffStart: Attribute.Integer;
+    CutOffEnd: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::param-application.param-application',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::param-application.param-application',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiParamLevelUserParamLevelUser extends Schema.CollectionType {
+  collectionName: 'param_level_users';
+  info: {
+    singularName: 'param-level-user';
+    pluralName: 'param-level-users';
+    displayName: 'ParamLevelUser';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Description: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::param-level-user.param-level-user',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::param-level-user.param-level-user',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiParamUserParamUser extends Schema.CollectionType {
+  collectionName: 'param_users';
+  info: {
+    singularName: 'param-user';
+    pluralName: 'param-users';
+    displayName: 'Paramlogin';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Username: Attribute.String;
+    Password: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::param-user.param-user',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::param-user.param-user',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -874,9 +927,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::group-menu.group-menu': ApiGroupMenuGroupMenu;
-      'api::param-application.param-application': ApiParamApplicationParamApplication;
-      'api::param-user.param-user': ApiParamUserParamUser;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -885,6 +935,11 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::group-menu.group-menu': ApiGroupMenuGroupMenu;
+      'api::menu.menu': ApiMenuMenu;
+      'api::param-application.param-application': ApiParamApplicationParamApplication;
+      'api::param-level-user.param-level-user': ApiParamLevelUserParamLevelUser;
+      'api::param-user.param-user': ApiParamUserParamUser;
     }
   }
 }

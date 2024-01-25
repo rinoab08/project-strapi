@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "param_level_users",
+  "info": {
+    "singularName": "param-level-user",
+    "pluralName": "param-level-users",
+    "displayName": "ParamLevelUser"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Description": {
+      "type": "string"
+    }
+  }
+}

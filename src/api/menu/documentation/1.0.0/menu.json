@@ -1,5 +1,5 @@
 {
-  "/group-menus": {
+  "/menus": {
     "get": {
       "responses": {
         "200": {
@@ -7,7 +7,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GroupMenuListResponse"
+                "$ref": "#/components/schemas/MenuListResponse"
               }
             }
           }
@@ -64,7 +64,7 @@
         }
       },
       "tags": [
-        "Group-menu"
+        "Menu"
       ],
       "parameters": [
         {
@@ -169,7 +169,7 @@
           }
         }
       ],
-      "operationId": "get/group-menus"
+      "operationId": "get/menus"
     },
     "post": {
       "responses": {
@@ -178,7 +178,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GroupMenuResponse"
+                "$ref": "#/components/schemas/MenuResponse"
               }
             }
           }
@@ -235,23 +235,23 @@
         }
       },
       "tags": [
-        "Group-menu"
+        "Menu"
       ],
       "parameters": [],
-      "operationId": "post/group-menus",
+      "operationId": "post/menus",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GroupMenuRequest"
+              "$ref": "#/components/schemas/MenuRequest"
             }
           }
         }
       }
     }
   },
-  "/group-menus/{id}": {
+  "/menus/{id}": {
     "get": {
       "responses": {
         "200": {
@@ -259,7 +259,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GroupMenuResponse"
+                "$ref": "#/components/schemas/MenuResponse"
               }
             }
           }
@@ -316,7 +316,7 @@
         }
       },
       "tags": [
-        "Group-menu"
+        "Menu"
       ],
       "parameters": [
         {
@@ -330,7 +330,7 @@
           }
         }
       ],
-      "operationId": "get/group-menus/{id}"
+      "operationId": "get/menus/{id}"
     },
     "put": {
       "responses": {
@@ -339,7 +339,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GroupMenuResponse"
+                "$ref": "#/components/schemas/MenuResponse"
               }
             }
           }
@@ -396,7 +396,7 @@
         }
       },
       "tags": [
-        "Group-menu"
+        "Menu"
       ],
       "parameters": [
         {
@@ -410,13 +410,13 @@
           }
         }
       ],
-      "operationId": "put/group-menus/{id}",
+      "operationId": "put/menus/{id}",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GroupMenuRequest"
+              "$ref": "#/components/schemas/MenuRequest"
             }
           }
         }
@@ -487,7 +487,7 @@
         }
       },
       "tags": [
-        "Group-menu"
+        "Menu"
       ],
       "parameters": [
         {
@@ -501,78 +501,7 @@
           }
         }
       ],
-      "operationId": "delete/group-menus/{id}"
-    }
-  },
-  "/group-menu": {
-    "get": {
-      "responses": {
-        "200": {
-          "description": "OK",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GroupMenuResponse"
-              }
-            }
-          }
-        },
-        "400": {
-          "description": "Bad Request",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Error"
-              }
-            }
-          }
-        },
-        "401": {
-          "description": "Unauthorized",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Error"
-              }
-            }
-          }
-        },
-        "403": {
-          "description": "Forbidden",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Error"
-              }
-            }
-          }
-        },
-        "404": {
-          "description": "Not Found",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Error"
-              }
-            }
-          }
-        },
-        "500": {
-          "description": "Internal Server Error",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Error"
-              }
-            }
-          }
-        }
-      },
-      "tags": [
-        "Group-menu"
-      ],
-      "parameters": [],
-      "operationId": "get/group-menu"
+      "operationId": "delete/menus/{id}"
     }
   }
 }

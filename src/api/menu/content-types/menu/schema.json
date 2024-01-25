@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "menus",
+  "info": {
+    "singularName": "menu",
+    "pluralName": "menus",
+    "displayName": "Menu"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Description": {
+      "type": "string"
+    },
+    "GroupMenu": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "group-menu"
+    }
+  }
+}

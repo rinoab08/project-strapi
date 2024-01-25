@@ -1,22 +1,32 @@
 'use strict';
 
 /**
- * group-menu router
- */
+* group-menu router
+*/
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
+const defaultRouter = createCoreRouter("api::group-menu.group-menu");
 
-module.exports = createCoreRouter('api::group-menu.group-menu');
-module.exports = {
-  routes: [
-      {
-          method: "GET",
-          path: "/group-menus",
-          handler: "group-menu.findMany",
-          config: {
-              policies: [],
-              middlewares: [],
-          },
+const customRouter = (innerRouter, extraRoutes = []) => {
+    let routes;
+    return {
+      get prefix() {
+        return innerRouter.prefix;
       },
-  ],
+      get routes() {
+        if (!routes) routes = innerRouter.routes.concat(extraRoutes);
+        return routes;
+      },
+    };
 };
+
+  const myExtraRoutes = [
+    {
+        method: "GET",
+        path: "/group-menu",
+        handler: "group-menu.GetMany",
+    }
+  ];
+
+  module.exports = customRouter(defaultRouter, myExtraRoutes);
+
