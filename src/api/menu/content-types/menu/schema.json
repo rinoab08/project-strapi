@@ -17,7 +17,8 @@
     "GroupMenu": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "group-menu"
+      "target": "GroupMenu",
+      "inversedBy": "article"
     }
   }
 }
